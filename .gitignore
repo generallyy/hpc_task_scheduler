@@ -1,0 +1,12 @@
+/build/
+/artifacts/
+/data/*.npz
+/data/*.h5
+/data/*.hdf5
+/.pytest_cache/
+/.tmp/
+/.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.DS_Store

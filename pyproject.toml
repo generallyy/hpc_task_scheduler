@@ -1,0 +1,35 @@
+[build-system]
+requires = ["scikit-build-core>=0.10", "pybind11>=2.13"]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "hpc-task-scheduler"
+version = "0.1.0"
+description = "Event-driven HPC scheduler with an offline CQL policy"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "gymnasium>=1.0",
+  "numpy>=1.26",
+]
+
+[project.optional-dependencies]
+training = [
+  "h5py>=3.11",
+  "onnx>=1.17",
+  "onnxscript>=0.1",
+  "onnxruntime>=1.20",
+  "pandas>=2.2",
+  "pyarrow>=17.0",
+  "torch>=2.4",
+]
+test = ["cmake>=3.24", "ninja>=1.11", "pytest>=8.3"]
+
+[tool.scikit-build]
+cmake.args = ["-DHPC_BUILD_INFERENCE=OFF", "-DHPC_NATIVE_ARCH=OFF", "-DBUILD_TESTING=OFF"]
+wheel.packages = ["hpc_scheduler"]
+build-dir = "build/{wheel_tag}"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
