@@ -1,5 +1,7 @@
 # HPC Task Scheduler
 
+Funny story, this guy, Alex from Boeing (*who apparently has been a full-time stay-at home-dad for the past three years*) interviewed me, and said "I looked at your Github, and it looked like a lot of video games and a lot of music technology. I see a clear pattern here." And so NOW we have a cluster placement simulator that relates to HPC, ML - Reinforcement Learning, and Backend Development. Take that, Alex.
+
 ```text
 hpc_task_scheduler/
 ├── include/cluster_env.hpp       # Event-driven C++20 state engine API
